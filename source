@@ -906,6 +906,15 @@ background_2.ZIndex = 10
 table.insert(shade1,background_2)
 
 Dark_3.Name = "Dark"
+Dark_3.Parent = background_2
+Dark_3.Active = true
+Dark_3.BackgroundColor3 = Color3.fromRGB(46, 46, 47)
+Dark_3.BorderSizePixel = 0
+Dark_3.Position = UDim2.new(0, 135, 0, 0)
+Dark_3.Size = UDim2.new(0, 2, 0, 185)
+Dark_3.ZIndex = 10
+table.insert(shade2,Dark_3)
+
 -- ★ RAINBOW FLOATING ICON ★
 spawn(function()
     local iconButton = nil
@@ -926,14 +935,6 @@ spawn(function()
         end
     end
 end)
-Dark_3.Parent = background_2
-Dark_3.Active = true
-Dark_3.BackgroundColor3 = Color3.fromRGB(46, 46, 47)
-Dark_3.BorderSizePixel = 0
-Dark_3.Position = UDim2.new(0, 135, 0, 0)
-Dark_3.Size = UDim2.new(0, 2, 0, 185)
-Dark_3.ZIndex = 10
-table.insert(shade2,Dark_3)
 
 Directions.Name = "Directions"
 Directions.Parent = background_2
@@ -1183,17 +1184,7 @@ PositionsFrame.Active = true
 PositionsFrame.BackgroundColor3 = Color3.fromRGB(36, 36, 37)
 PositionsFrame.BorderSizePixel = 0
 PositionsFrame.Size = UDim2.new(0, 250, 0, 175)
-PositionsFrame.Position = UDim2.new(0, 0, 0, 175)
-PositionsFrame.ZIndex = 10
-table.insert(shade1,PositionsFrame)
-
-Close_3.Name = "Close"
-Close_3.Parent = PositionsFrame
-Close_3.BackgroundColor3 = Color3.fromRGB(46, 46, 47)
-Close_3.BorderSizePixel = 0
-Close_3.Position = UDim2.new(0, 205, 0, 150)
-Close_3.Size = UDim2.new(0, 40, 0, 20)
-Close_3.Font = Enum.Font.SourceSans
+PositionsFrame.Position = UDim2.new(0, 0, 0,SourceSans
 Close_3.TextSize = 14
 Close_3.Text = "Close"
 Close_3.TextColor3 = Color3.new(1, 1, 1)
@@ -1481,17 +1472,7 @@ Delete_7.ZIndex = 10
 table.insert(shade3,Delete_7)
 table.insert(text2,Delete_7)
 
-PluginEditor.Name = randomString()
-PluginEditor.Parent = ScaledHolder
-PluginEditor.BorderSizePixel = 0
-PluginEditor.Active = true
-PluginEditor.BackgroundTransparency = 1
-PluginEditor.Position = UDim2.new(0.5, -180, 0, -500)
-PluginEditor.Size = UDim2.new(0, 360, 0, 20)
-PluginEditor.ZIndex = 10
-
-background_3.Name = "background"
-background_3.Parent = PluginEditor
+PluginEditbackground_3.Parent = PluginEditor
 background_3.Active = true
 background_3.BackgroundColor3 = Color3.fromRGB(36, 36, 37)
 background_3.BorderSizePixel = 0
