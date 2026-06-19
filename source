@@ -339,7 +339,7 @@ Scale.Name = randomString()
 Holder.Name = randomString()
 Holder.Parent = ScaledHolder
 Holder.Active = true
-Holder.BackgroundColor3 = Color3.fromRGB(46, 46, 47)
+Holder.BackgroundColor3 = Color3.fromRGB(30, 40, 80)
 Holder.BorderSizePixel = 0
 Holder.Position = UDim2.new(1, -250, 1, -220)
 Holder.Size = UDim2.new(0, 250, 0, 220)
@@ -354,7 +354,7 @@ Title.BorderSizePixel = 0
 Title.Size = UDim2.new(0, 250, 0, 20)
 Title.Font = Enum.Font.SourceSans
 Title.TextSize = 18
-Title.Text = "REN ADMIN PANEL OP v" .. currentVersion
+Title.Text = "private exit OP v" .. currentVersion
 
 do
 	local emoji = ({
@@ -540,9 +540,20 @@ function makeSettingsButton(name,iconID,off)
 	label.ZIndex = 10
 	label.TextXAlignment = Enum.TextXAlignment.Left
 	table.insert(shade2,button)
-	table.insert(text1,label)
-	return button
-end
+table.insert(text1,label)
+
+-- ★ RAINBOW COMMAND NAMES ★
+spawn(function()
+    local hue = 0
+    while label and label.Parent do
+        label.TextColor3 = Color3.fromHSV(hue, 1, 1)
+        hue = hue + 0.01
+        if hue > 1 then hue = 0 end
+        wait(0.03)
+    end
+end)
+
+return button
 
 ColorsButton = makeSettingsButton("Edit Theme",getcustomasset("infiniteyield/assets/edittheme.png"))
 ColorsButton.Position = UDim2.new(0, 5, 0, 55)
@@ -895,6 +906,26 @@ background_2.ZIndex = 10
 table.insert(shade1,background_2)
 
 Dark_3.Name = "Dark"
+-- ★ RAINBOW FLOATING ICON ★
+spawn(function()
+    local iconButton = nil
+    while not iconButton do
+        for i,v in pairs(PARENT:GetDescendants()) do
+            if v.Name == "Icon" and v:IsA("TextButton") then
+                iconButton = v
+                break
+            end
+        end
+        wait(0.1)
+    end
+    while iconButton and iconButton.Parent do
+        for hue = 0, 1, 0.01 do
+            if not iconButton or not iconButton.Parent then break end
+            iconButton.BackgroundColor3 = Color3.fromHSV(hue, 1, 1)
+            wait(0.02)
+        end
+    end
+end)
 Dark_3.Parent = background_2
 Dark_3.Active = true
 Dark_3.BackgroundColor3 = Color3.fromRGB(46, 46, 47)
